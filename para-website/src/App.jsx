@@ -10,6 +10,8 @@ import Gallery from './Gallery';
 import Projects from './Projects';
 import Certifications from './Certifications';
 import Contacts from './Contacts';
+import ScottPoint from './projects/ScottPoint';
+import FalconGreen from './projects/FalconGreen';
 
 function App() {
 
@@ -23,7 +25,9 @@ function App() {
               <Route index element={<Navigate to="home"/>}/>
               <Route path='home' element={<Home />}/>
               <Route path='gallery' element={<Gallery />}/>
-              <Route path='projects' element={<Projects />}/>
+              <Route path='projects' element={<Projects />} />
+              <Route path='projects/0' element={<ScottPoint />} />
+              <Route path='projects/1' element={<FalconGreen />} />
               <Route path='certifications' element={<Certifications />}/>
               <Route path='contacts' element={<Contacts />}/>
             </Route>
