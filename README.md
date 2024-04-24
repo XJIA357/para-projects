@@ -1,4 +1,4 @@
-# CS 732 Assignment - Tailwind CSS - Elsa Jiang
+# Para Projects Limited
 
 Kia ora
 
