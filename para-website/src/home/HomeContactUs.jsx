@@ -3,14 +3,54 @@ import { Link } from "react-router-dom";
 
 export default function HomeContactUs (){
     const [submitted, setSubmitted] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (event) => {
+    const [message, setMessage] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        interest: '',
+        content: ''
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setMessage((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (event) => {
         event.preventDefault(); 
-        setSubmitted(true); 
+        try{
+            console.log(message);
+            const response = await fetch('https://5teukdoox8.execute-api.ap-southeast-2.amazonaws.com/prod',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(message),
+            });
 
-        setTimeout(() => {
-            window.location.reload();
-        }, 3000);
+            const data = await response.json();
+
+            if (response.ok) {
+                setSubmitted(true); 
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
+            } else {
+                setErrorMessage(data.message || 'An unexpected error occurred.');
+            }
+
+        } catch (error) {
+            console.error('Error:', error);
+            setErrorMessage(error.message || 'An error occurred while trying to send message. Please try again or contact us through phone or email directly.'); 
+        }
+        
     };
 
     const successMessage = submitted ? (
@@ -26,11 +66,11 @@ export default function HomeContactUs (){
             <form className="flex flex-col items-start py-10" onSubmit={handleSubmit}>
                 <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 gap-10">
                     <div className="lg:col-span-2 space-y-4 flex-1 flex flex-col">
-                        <input type="text" placeholder="Name" className="w-full px-4 py-2 bg-gray-100" />
-                        <input type="tel" placeholder="Phone Number*" className="w-full px-4 py-2 bg-gray-100" required />
-                        <input type="email" placeholder="E-mail*" className="w-full px-4 py-2 bg-gray-100" required />
-                        <input type="text" placeholder="Interested In" className="w-full px-4 py-2 bg-gray-100" />
-                        <textarea placeholder="Message*" className="w-full flex-1 px-4 py-2 bg-gray-100" required></textarea>
+                        <input type="text" name="name" placeholder="Name" className="w-full px-4 py-2 bg-gray-100" value={message.name} onChange={handleChange} />
+                        <input type="tel" name="phone" placeholder="Phone Number*" className="w-full px-4 py-2 bg-gray-100" value={message.phone} onChange={handleChange} required />
+                        <input type="email" name="email" placeholder="E-mail*" className="w-full px-4 py-2 bg-gray-100" value={message.email} onChange={handleChange} required />
+                        <input type="text" name="interest" placeholder="Interested In" className="w-full px-4 py-2 bg-gray-100" value={message.interest} onChange={handleChange} />
+                        <textarea name="content" placeholder="Message*" className="w-full flex-1 px-4 py-2 bg-gray-100" value={message.content} onChange={handleChange} required></textarea>
                     </div>
                     <img src="/home/contact-us.png" className="lg:col-span-3 items-center"></img>
                 </div>
@@ -39,6 +79,7 @@ export default function HomeContactUs (){
                 sm:text-xs md:text-sm xl:text-lg
                 hover:bg-white hover:text-black hover:border-black">Send Email →</button>
                 {successMessage}
+                {errorMessage && <div className="text-red-500 mt-3">{errorMessage}</div>}
             </form>
         </div>
     );
