@@ -8,7 +8,7 @@ export default function Footer(){
             sm:gap-2 md:gap-5 lg:gap-10  
             lg:pr-10 xl:pr-40">
                 <div className="hidden sm:block">
-                    <img src="footer/para-icon.jpg"></img>
+                    <img src="/footer/para-icon.jpg" alt="Para Icon"></img>
                 </div>
                 <div className="flex flex-col items-start sm:space-y-4">
                     <p className="font-bold">Information</p>
@@ -20,31 +20,33 @@ export default function Footer(){
                 </div>
                 <div className="flex flex-col items-start sm:space-y-4">
                     <p className="font-bold">Contacts</p>
-                    <div className="flex flex-row items-center 
+                    {/* <div className="flex flex-row items-center 
                     sm:space-x-0 md:space-x-4">
                         <img src="/footer/address.png" width="24" height="27"></img>
                         <p className="text-sm text-left">00 Sample Street, District, Auckland 1234</p>
-                    </div>
+                    </div> */}
                     <div className="flex flex-row items-center
                     sm:space-x-0 md:space-x-4">
                         <img src="/footer/phone.png" width="24" height="27"></img>
-                        <p className="text-sm">000 0000 0000</p>
+                        <p className="text-sm">+64 29 776 8777</p>
                     </div>
                     <div className="flex flex-row items-center
                     sm:space-x-0 md:space-x-4">
                         <img src="/footer/email.png" width="24" height="27"></img>
-                        <p className="text-sm">sampleemail@gmail.com</p>
+                        <p className="text-sm">info.paraprojects@gmail.com</p>
                     </div>
                 </div>
-                <div className="flex flex-col items-start sm:space-y-4">
-                    <p className="font-bold">Social Media</p>
-                    <div className="flex flex-row items-center 
+                <div className="flex flex-col items-start sm:items-center  sm:space-y-4">
+                    {/* <p className="font-bold">Social Media</p> */}
+                    <p className="font-bold">Wechat Contact</p>
+                    <img src="/footer/wechat-code.jpg" className="w-1/2 py-4 "></img>
+                    {/* <div className="flex flex-row items-center 
                     sm:space-x-3 md:space-x-6">
                         <img src="/footer/facebook.png" width="24" height="27"></img>
                         <img src="/footer/tweet.png" width="24" height="27"></img>
                         <img src="/footer/ins.png" width="24" height="27"></img>
                         <img src="/footer/Pinterest.png" width="24" height="27"></img>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </footer>

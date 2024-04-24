@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 
 export default function Projects(){
     const allProjects = [
-        { name: "Sample Project", imageupi: "/projects/sample-project-one.png", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." },
-        { name: "Sample Project 2", imageupi: "/projects/sample-project-two.png", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." },
+        { name: "Project Scott Point", imageupi: "/home/homeProjectRealOne.jpg", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." },
+        { name: "Project Falcon Green", imageupi: "/projects/falcon-green-cover.jpg", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." },
         { name: "Sample Project 3", imageupi: "/projects/sample-project-three.png", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." },
         { name: "Sample Project 4", imageupi: "/projects/sample-project-one.png", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." }
     ];
@@ -42,12 +42,13 @@ export default function Projects(){
             text-2xl md:text-4xl xl:text-6xl">Projects</p>
             <div className="flex flex-col items-end">
                 <div className="border-t-2 flex flex-col">
-                    {visibleProjects.map(project => (
+                    {visibleProjects.map((project, index) => (
                         <SampleProject 
                             key={project.name}
                             name={project.name} 
                             imageupi={project.imageupi} 
                             description={project.description}
+                            index={index}
                         />
                     ))}
                 </div>

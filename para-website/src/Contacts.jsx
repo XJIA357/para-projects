@@ -15,11 +15,14 @@ export default function Contacts(){
                 text-2xl sm:text-4xl xl:text-6xl">Contact</p>
                 <p className="text-black font-bold text-left pb-5
                 text-2xl sm:text-4xl xl:text-6xl">Information</p>
+                <div className="lg:hidden">
+                    <img src="/contacts/contacts.jpg"></img>
+                </div>
                 <p className="font-bold py-5 text-orange-500
                 text-xl lg:text-2xl xl:text-3xl">Para Projects Limited</p>
-                <p className="text-left">Address: 00 Sample Street, District, Auckland 1234</p>
-                <p>Phone: 000 0000 0000</p>
-                <p>Email: sampleemail@gmail.com</p>
+                {/* <p className="text-left">Address: 00 Sample Street, District, Auckland 1234</p> */}
+                <p>Phone: +64 29 776 8777</p>
+                <p>Email: info.paraprojects@gmail.com</p>
                 <HashLink to="/home#contact-section" smooth>
                     <button className="bg-gray-900 text-gray-100 uppercase 
                     lg:px-8 xl:px-10 
