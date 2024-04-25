@@ -12,6 +12,8 @@ import Certifications from './Certifications';
 import Contacts from './Contacts';
 import ScottPoint from './projects/ScottPoint';
 import FalconGreen from './projects/FalconGreen';
+import Edgewater from './projects/Edgewater';
+import HubsonBay from './projects/HubsonBay';
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
               <Route path='projects' element={<Projects />} />
               <Route path='projects/0' element={<ScottPoint />} />
               <Route path='projects/1' element={<FalconGreen />} />
+              <Route path='projects/2' element={<HubsonBay />} />
+              <Route path='projects/3' element={<Edgewater />} />
               <Route path='certifications' element={<Certifications />}/>
               <Route path='contacts' element={<Contacts />}/>
             </Route>
