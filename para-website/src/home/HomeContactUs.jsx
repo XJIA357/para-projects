@@ -25,7 +25,7 @@ export default function HomeContactUs (){
         event.preventDefault(); 
         try{
             console.log(message);
-            const response = await fetch('https://i1dxby671c.execute-api.ap-southeast-2.amazonaws.com/prod',
+            const response = await fetch('https://i1dxby671c.execute-api.ap-southeast-2.amazonaws.com/prod/contact',
             {
                 method: 'POST',
                 headers: {
