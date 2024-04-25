@@ -18,7 +18,7 @@ export default function Home(){
             {/* sample projects part */}
             <HomeSampleProjects />
             {/* contact us form */}
-            {/* <HomeContactUs /> */}
+            <HomeContactUs />
         </div>
     );
 }
