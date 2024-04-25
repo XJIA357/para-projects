@@ -4,25 +4,26 @@ import { useEffect } from 'react';
 
 export default function Gallery(){
     const images = [
-        '/gallery/gallery-one.png',
-        '/gallery/gallery-two.png',
-        '/gallery/gallery-three.png',
-        '/gallery/gallery-four.png',
-        '/gallery/gallery-five.png',
-        '/gallery/gallery-six.png',
-        '/gallery/gallery-seven.png',
-        '/gallery/gallery-eight.png',
-        '/gallery/gallery-nine.png',
-        '/gallery/gallery-ten.png',
-        '/gallery/gallery-one.png',
-        '/gallery/gallery-two.png',
-        '/gallery/gallery-three.png',
-        '/gallery/gallery-four.png',
-        '/gallery/gallery-five.png',
-        '/gallery/gallery-six.png',
-        '/gallery/gallery-seven.png',
-        '/gallery/gallery-eight.png',
-        '/gallery/gallery-nine.png'
+        '/gallery/galleryTwoOne.jpg',
+        '/gallery/galleryTwoTwo.jpg',
+        '/gallery/galleryTwoThree.jpg',
+        '/gallery/galleryTwoFour.jpg',
+        '/gallery/galleryTwoFive.jpg',
+        '/gallery/galleryTwoSix.jpg',
+        '/gallery/galleryTwoSeven.jpg',
+        '/gallery/galleryTwoEight.jpg',
+        '/gallery/galleryTwoNine.jpg',
+        '/gallery/galleryTwoTen.jpg',
+        '/gallery/galleryOneOne.jpg',
+        '/gallery/galleryOneTwo.jpg',
+        '/gallery/galleryOneThree.jpg',
+        '/gallery/galleryOneFour.jpg',
+        '/gallery/galleryOneFive.jpg',
+        '/gallery/galleryOneSix.jpg',
+        '/gallery/galleryOneSeven.jpg',
+        '/gallery/galleryOneEight.jpg',
+        '/gallery/galleryOneNine.jpg',
+        '/gallery/galleryOneTen.jpg'
     ];
 
     useEffect(() => {
