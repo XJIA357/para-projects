@@ -1,7 +1,7 @@
 import React from "react";
 import WhiteButton from "../tools/WhiteButton";
 
-export default function SampleProject({name, imageupi, description, index}){
+export default function SampleProject({name, imageupi, index}){
     const projectDetailUrl = `/projects/${encodeURIComponent(index)}`;
 
     return (
@@ -13,8 +13,6 @@ export default function SampleProject({name, imageupi, description, index}){
             p-5 xl:p-10">
                 <p className="text-gray-500 text-left
                 text-2xl sm:text-lg md:text-2xl xl:text-4xl">{name}</p>
-                {/* <p className="text-left xl:py-10
-                lg:text-sm xl:text-base">{description}</p> */}
                 <a href={projectDetailUrl}>
                     <WhiteButton buttonText={"view more →"} />
                 </a>
