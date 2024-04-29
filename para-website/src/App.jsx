@@ -24,14 +24,14 @@ function App() {
         <div className='flex-grow sm:px-20 rem'>
           <Routes>
             <Route path='/'>
-              <Route index element={<Navigate to="home"/>}/>
+              <Route index element={<Navigate to="projects"/>}/>
               <Route path='home' element={<Home />}/>
               <Route path='gallery' element={<Gallery />}/>
               <Route path='projects' element={<Projects />} />
-              <Route path='projects/0' element={<ScottPoint />} />
-              <Route path='projects/1' element={<FalconGreen />} />
-              <Route path='projects/2' element={<HubsonBay />} />
-              <Route path='projects/3' element={<Edgewater />} />
+              <Route path='projects/1' element={<ScottPoint />} />
+              <Route path='projects/2' element={<FalconGreen />} />
+              <Route path='projects/3' element={<HubsonBay />} />
+              <Route path='projects/4' element={<Edgewater />} />
               <Route path='certifications' element={<Certifications />}/>
               <Route path='contacts' element={<Contacts />}/>
             </Route>
