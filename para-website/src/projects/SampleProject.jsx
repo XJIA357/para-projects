@@ -7,7 +7,7 @@ export default function SampleProject({name, imageupi, index}){
     return (
         <div className="flex flex-col lg:grid lg:grid-cols-5 py-8">
             <img src={imageupi} className="lg:col-span-3 
-            lg:h-80 xl:h-96 
+            h-auto 
             w-full"></img>
             <div className="lg:col-span-2 flex flex-col items-start justify-evenly bg-gray-100 
             p-5 xl:p-10">
