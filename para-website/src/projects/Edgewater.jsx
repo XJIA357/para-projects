@@ -10,15 +10,27 @@ export default function Edgewater(){
             <p className="text-black font-bold text-left pb-10
             text-lg md:text-2xl xl:text-4xl">(Under Construction)</p>
             <div className="border-t-2 flex flex-col py-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <img src="/projects/edgewater-terraced-house.jpg"></img>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <img src="/projects/edgewater-one.jpg"></img>
+                <img src="/projects/edgewater-two.jpg"></img>
                 </div>
-                <div className="flex justify-start w-full py-10">
-                    <a href="/projects">
-                        <WhiteButton buttonText={"← Back"} />
-                    </a>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-5">
+                <img src="/projects/edgewater-three.jpg"></img>
+                <img src="/projects/edgewater-four.jpg"></img>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-5">
+                <img src="/projects/edgewater-five.jpg"></img>
+                <img src="/projects/edgewater-six.jpg"></img>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-5">
+                <img src="/projects/edgewater-seven.jpg"></img>
+            </div>
+            <div className="flex justify-start w-full py-10">
+                <a href="/projects">
+                    <WhiteButton buttonText={"← Back"} />
+                </a>
             </div>
         </div>
+    </div>
     );
 }

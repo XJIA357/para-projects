@@ -14,6 +14,10 @@ import ScottPoint from './projects/ScottPoint';
 import FalconGreen from './projects/FalconGreen';
 import Edgewater from './projects/Edgewater';
 import HubsonBay from './projects/HubsonBay';
+import OfficeFitout from './projects/OfficeFitout';
+import CommercialFitout from './projects/CommercialFitout';
+import ShopFitout from './projects/ShopFitout';
+import HendersonApartment from './projects/HendersonApartment';
 
 function App() {
 
@@ -29,9 +33,13 @@ function App() {
               <Route path='gallery' element={<Gallery />}/>
               <Route path='projects' element={<Projects />} />
               <Route path='projects/1' element={<ScottPoint />} />
-              <Route path='projects/2' element={<FalconGreen />} />
-              <Route path='projects/3' element={<HubsonBay />} />
-              <Route path='projects/4' element={<Edgewater />} />
+              <Route path='projects/2' element={<HubsonBay />} />
+              <Route path='projects/3' element={<FalconGreen />} />
+              <Route path='projects/4' element={<HendersonApartment />} />
+              <Route path='projects/5' element={<Edgewater />} />
+              <Route path='projects/6' element={<CommercialFitout />} />
+              <Route path='projects/7' element={<OfficeFitout />} />
+              <Route path='projects/8' element={<ShopFitout />} />
               <Route path='certifications' element={<Certifications />}/>
               <Route path='contacts' element={<Contacts />}/>
             </Route>

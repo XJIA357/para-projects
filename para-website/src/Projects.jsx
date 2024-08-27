@@ -5,9 +5,13 @@ import SampleProject from "./projects/SampleProject";
 export default function Projects() {
     const allProjects = [
         { name: "Project Scott Point", imageupi: "/home/homeProjectRealOne.jpg", index: 1, type: "construction" },
-        { name: "Project Falcon Green", imageupi: "/projects/falcon-green-cover.jpg", index: 2, type: "construction" },
-        { name: "Project Hudson Bay", imageupi: "/projects/hubson-bay-cover.jpg", index: 3, type: "construction" },
-        { name: "Project Edgewater Terraced-house (Under Construction)", imageupi: "/projects/edgewater-terraced-house.jpg", index: 4, type: "construction" }
+        { name: "Project Hudson Bay", imageupi: "/home/home-sample-one.png", index: 2, type: "construction" },
+        { name: "Project Falcon Green", imageupi: "/projects/falcon-green-cover.jpg", index: 3, type: "construction" },
+        { name: "Project Henderson Apartment", imageupi: "/projects/henderson-apartment-cover.jpg", index: 4, type: "construction" },
+        { name: "Project Edgewater Terraced-house (Under Construction)", imageupi: "/projects/edgewater-terraced-house.jpg", index: 5, type: "construction" },
+        { name: "Commercial Fitout", imageupi: "/projects/commercial-fitout-four.jpg", index: 6, type: "fitout" },
+        { name: "Office Fitout", imageupi: "/projects/office-fitout-one.jpg", index: 7, type: "fitout" },
+        { name: "Shop Fitting", imageupi: "/projects/shop-fitout-one.jpg", index: 8, type: "fitout" }
     ];
 
     const [filter, setFilter] = useState("all");
@@ -51,12 +55,31 @@ export default function Projects() {
             <p className="text-black font-bold text-left pb-10 text-2xl md:text-4xl xl:text-6xl">Projects</p>
             
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 pb-6">
-                <button className="flex-grow min-w-[100px] py-2 px-4 text-white bg-gray-500 tracking-wider uppercase hover:bg-black hover:text-white hover:border-white" onClick={() => applyFilter("all")}>All</button>
-                <button className="flex-grow min-w-[100px] py-2 px-4 text-white bg-gray-500 tracking-wider uppercase hover:bg-black hover:text-white hover:border-white" onClick={() => applyFilter("construction")}>Construction</button>
-                <button className="flex-grow min-w-[100px] py-2 px-4 text-white bg-gray-500 tracking-wider uppercase hover:bg-black hover:text-white hover:border-white" onClick={() => applyFilter("fitout")}>Fitout</button>
+                <button
+                    className={`flex-grow min-w-[100px] py-2 px-4 tracking-wider uppercase ${
+                        filter === "all" ? "bg-black text-white" : "bg-gray-700 text-white hover:bg-black hover:text-white"
+                    }`}
+                    onClick={() => applyFilter("all")}
+                >
+                    All
+                </button>
+                <button
+                    className={`flex-grow min-w-[100px] py-2 px-4 tracking-wider uppercase ${
+                        filter === "construction" ? "bg-black text-white" : "bg-gray-700 text-white hover:bg-black hover:text-white"
+                    }`}
+                    onClick={() => applyFilter("construction")}
+                >
+                    Construction
+                </button>
+                <button
+                    className={`flex-grow min-w-[100px] py-2 px-4 tracking-wider uppercase ${
+                        filter === "fitout" ? "bg-black text-white" : "bg-gray-700 text-white hover:bg-black hover:text-white"
+                    }`}
+                    onClick={() => applyFilter("fitout")}
+                >
+                    Fitout
+                </button>
             </div>
-
-
 
 
             <div className="flex flex-col items-end">
