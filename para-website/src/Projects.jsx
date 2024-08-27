@@ -1,45 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import WhiteButton from "./tools/WhiteButton";
 import SampleProject from "./projects/SampleProject";
-import { useEffect } from 'react';
 
-export default function Projects(){
+export default function Projects() {
     const allProjects = [
-        { name: "Project Scott Point", imageupi: "/home/homeProjectRealOne.jpg", index: 1},
-        { name: "Project Falcon Green", imageupi: "/projects/falcon-green-cover.jpg", index: 2},
-        { name: "Project Hudson Bay", imageupi: "/projects/hubson-bay-cover.jpg", index: 3},
-        { name: "Project Edgewater Terraced-house (Under Construction)", imageupi: "/projects/edgewater-terraced-house.jpg", index: 4}
+        { name: "Project Scott Point", imageupi: "/home/homeProjectRealOne.jpg", index: 1, type: "construction" },
+        { name: "Project Falcon Green", imageupi: "/projects/falcon-green-cover.jpg", index: 2, type: "construction" },
+        { name: "Project Hudson Bay", imageupi: "/projects/hubson-bay-cover.jpg", index: 3, type: "construction" },
+        { name: "Project Edgewater Terraced-house (Under Construction)", imageupi: "/projects/edgewater-terraced-house.jpg", index: 4, type: "construction" }
     ];
 
-    const [visibleProjects, setVisibleProjects] = useState(allProjects.slice(0, 3));
+    const [filter, setFilter] = useState("all");
     const [currentPage, setCurrentPage] = useState(0);
 
-    const totalPages = Math.ceil(allProjects.length / 3);
+    const filteredProjects = () => {
+        if (filter === "all") return allProjects;
+        return allProjects.filter(project => project.type === filter);
+    };
+
+    const totalPages = Math.ceil(filteredProjects().length / 3);
+
+    const [visibleProjects, setVisibleProjects] = useState(filteredProjects().slice(0, 3));
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    useEffect(() => {
+        setVisibleProjects(filteredProjects().slice(currentPage * 3, (currentPage * 3) + 3));
+    }, [filter, currentPage]);
+
     const handleNextButtonClick = () => {
         const nextPage = currentPage + 1;
-        const nextProjects = allProjects.slice(nextPage * 3, (nextPage * 3) + 3);
-        setVisibleProjects(nextProjects);
         setCurrentPage(nextPage);
     };
 
     const handlePreviousButtonClick = () => {
         const prevPage = currentPage - 1;
-        const prevProjects = allProjects.slice(prevPage * 3, (prevPage * 3) + 3);
-        setVisibleProjects(prevProjects);
         setCurrentPage(prevPage);
     };
 
-    return(
+    const applyFilter = (filter) => {
+        setFilter(filter);
+        setCurrentPage(0);
+    };
+
+    return (
         <div className="container mx-auto p-10">
-            <p className="text-gray-500 text-left
-            text-2xl md:text-4xl xl:text-6xl">Our</p>
-            <p className="text-black font-bold text-left pb-10
-            text-2xl md:text-4xl xl:text-6xl">Projects</p>
+            <p className="text-gray-500 text-left text-2xl md:text-4xl xl:text-6xl">Our</p>
+            <p className="text-black font-bold text-left pb-10 text-2xl md:text-4xl xl:text-6xl">Projects</p>
+            
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 pb-6">
+                <button className="flex-grow min-w-[100px] py-2 px-4 text-white bg-gray-500 tracking-wider uppercase hover:bg-black hover:text-white hover:border-white" onClick={() => applyFilter("all")}>All</button>
+                <button className="flex-grow min-w-[100px] py-2 px-4 text-white bg-gray-500 tracking-wider uppercase hover:bg-black hover:text-white hover:border-white" onClick={() => applyFilter("construction")}>Construction</button>
+                <button className="flex-grow min-w-[100px] py-2 px-4 text-white bg-gray-500 tracking-wider uppercase hover:bg-black hover:text-white hover:border-white" onClick={() => applyFilter("fitout")}>Fitout</button>
+            </div>
+
+
+
+
             <div className="flex flex-col items-end">
                 <div className="border-t-2 flex flex-col">
                     {visibleProjects.map((project) => (
@@ -65,5 +84,5 @@ export default function Projects(){
                 </div>
             </div>
         </div>
-    )
+    );
 }
